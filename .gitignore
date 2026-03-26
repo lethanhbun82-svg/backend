@@ -1,0 +1,29 @@
+# Các thư viện phụ thuộc (Rất nặng, không nên push)
+node_modules/
+jspm_packages/
+
+# File chứa mật khẩu và cấu hình bảo mật (CỰC KỲ QUAN TRỌNG)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# File log khi chạy app
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Các file cấu hình hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Thư mục build (nếu bạn có dùng TypeScript hoặc Babel)
+dist/
+build/
+
+# Cấu hình IDE (VS Code, WebStorm)
+.vscode/
+.idea/
