@@ -54,6 +54,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
     'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.js'
   ]
 }));
+app.get('/', (req, res) => {
+  res.send('API is running 🚀');
+});
 
 // 4. ROUTES CHO PROJECTS
 // Lấy danh sách
