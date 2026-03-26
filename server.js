@@ -12,8 +12,16 @@ app.use(express.json());
 // 1. KẾT NỐI MONGODB
 // DATABASE_URL trong .env lúc này nên là: mongodb://localhost:27017/your_db_name
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Connected!"))
-  .catch(err => console.error("❌ MongoDB Connection Error:", err));
+  .then(() => {
+    console.log("✅ MongoDB Connected");
+
+    app.listen(5000, () => {
+      console.log("Server running");
+    });
+  })
+  .catch(err => {
+    console.log("❌ DB Error:", err);
+  });
 
 // 2. MODELS (Sử dụng Schema của Mongoose)
 const ProjectSchema = new mongoose.Schema({
@@ -127,9 +135,5 @@ app.delete('/api/contacts/:id', async (req, res) => {
 
 // 6. START
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server: http://localhost:${PORT}`);
-  console.log(`📖 Swagger: http://localhost:${PORT}/api-docs`);
-});
 
 module.exports = app;
