@@ -11,7 +11,7 @@ app.use(express.json());
 
 // 1. KẾT NỐI MONGODB
 // DATABASE_URL trong .env lúc này nên là: mongodb://localhost:27017/your_db_name
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected!"))
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
